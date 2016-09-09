@@ -17,7 +17,9 @@ var commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/taas_v12");
+// mongoose.connect("mongodb://localhost/taas_v12");
+mongoose.connect("mongodb://rcrowen:penPEN2016@ds029106.mlab.com:29106/taas");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.set('view engine', 'ejs');
