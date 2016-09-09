@@ -17,10 +17,8 @@ var commentRoutes = require('./routes/comments'),
     indexRoutes = require('./routes/index');
 
 mongoose.Promise = global.Promise;
-var dataBase = process.env.DATABASEURL;
+var dataBase = process.env.DATABASEURL || "mongodb://localhost/taas_v12";
 mongoose.connect(dataBase);
-
-// mongoose.connect("mongodb://rcrowen:penPEN2016@ds029106.mlab.com:29106/taas");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
