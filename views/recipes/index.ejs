@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+<header class="jumbotron">
+    <div class="container">
+      <h1>Tacos and Much More</h1>
+      <p>Click on a recipe below to view</p>
+      <p>
+          <a class="btn btn-lg btn-primary" href="/recipes/new">Create a new recipe</a>
+      </p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row" style="display: flex; flex-wrap: wrap;">
+        
+        <% recipes.forEach(function(recipe) { %>
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="<%= recipe.image %>">
+                    <div class="caption text-center">
+                        <h4><%= recipe.name %></h4>
+                    </div>
+                    <% if(typeof recipe.directions !== "undefined" && recipe.directions.length>100) { %>
+                    <p><%- recipe.directions.substring(0,150) %>...</p>
+                    <% } else { %>
+                    <p><%- recipe.directions %></p>
+                    <% }; %>
+                    <p>
+                        <a href="/recipes/<%= recipe._id %>" class="btn btn-xs btn-primary">See recipe</a>
+                    </p>
+                </div>
+            </div>
+        <% }); %>
+        
+    </div>
+</div>
+
+<% include ../partials/footer %>

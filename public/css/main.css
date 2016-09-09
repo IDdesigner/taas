@@ -1,0 +1,256 @@
+html, body {
+	font-family: "open sans", "Helevetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #F0E4DF;
+	color: #676a6c;
+	height: 100%;
+}
+
+.grad {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(-45deg, white, #eee); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(-45deg, white, #eee); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(-45deg, white, #eee); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(-45deg, white, #eee); /* Standard syntax */
+}
+
+.spaceAdd {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    
+    .mainJumbo {
+        min-height: 800px;
+        position: relative;
+        background: #F0E4DF url("../images/taco.jpg") center center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+     h1.myFont {
+        color: white;
+        margin-top: 150px;
+        text-shadow: 2px 2px 6px #666;
+
+    }
+    
+    .myFontPara {
+        color: white;
+        font-size: 40px;
+        text-shadow: 2px 2px 6px #666;
+        margin-top: -5px;
+    }
+    
+    .myHeader {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .myBody {
+        font-size: 1.3em;
+        text-align: left;
+    }
+    
+    .foodBody {
+        font-size: 1.3em;
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .mainJumbo {
+        min-height: 800px;
+        position: relative;
+        background: #F0E4DF url("../taco.jpg") center center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+    h1.myFont {
+        color: white;
+        margin-top: 50px;
+        text-shadow: 2px 2px 6px #666;
+    }
+    
+    .myFontPara {
+        color: white;
+        font-size: 40px;
+        text-shadow: 2px 2px 6px #666;
+        margin-top: -10px;
+    }
+    
+    .myHeader {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .myBody {
+        font-size: 1.3em;
+        text-align: left;
+    }
+    
+}
+
+.valign-top {
+	vertical-align: top;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0px;
+}
+
+.thumbnail p {
+    padding: 10px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: #00CDD6 !important;
+    color: #F0E4DF;
+}
+
+
+/* navbar */
+.navbar-default {
+    background-color: #FF0038;
+    border-color: #FF0038;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #F0E4DF;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #F0E4DF;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #333;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+/* caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+    border-top-color: #777;
+    border-bottom-color: #777;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+    border-top-color: #333;
+    border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+    border-top-color: #555;
+    border-bottom-color: #555;
+}
+/* mobile version */
+.navbar-default .navbar-toggle {
+    border-color: #DDD;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #DDD;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #CCC;
+}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+    }
+}
+
+#deleteBtn {
+    display: inline;
+}
+
+.fixDisplay {
+    display: inline;
+}
+
+.commentBlock {
+
+}
+
+.commentText {
+    font-size: .85em;
+    margin-top: -10px;
+    color: #ff99cc;
+}
+
+.submittedText {
+    font-size: .85em;
+    color: #ff99cc;
+}
+
+.alert-space {
+    margin-top: 10px;
+}
+
+.addMargin {
+    margin: 0px 12px;
+}
+
+.flexMe img {
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.tortillaImg {
+        min-height: 300px;
+        max-height: 500px;
+        position: relative;
+        background: #F0E4DF url("../images/makingTortilla.jpg") center center;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
+        margin-bottom: 30px;
+        margin-top: 30px;
+}
+    
+.showImg {
+    width:100%;
+    height:auto;
+    margin-bottom: 2px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width:500px;
+}  

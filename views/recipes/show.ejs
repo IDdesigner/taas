@@ -1,0 +1,121 @@
+<% include ../partials/header %>
+<% include /functions %>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2> </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="<%= recipe.image %>" class="img-responsive showImg">
+            <div style="margin-top: 5px;">
+                <p class="submittedText"><em>Submitted by: <strong><%= recipe.author.username %></strong></em></p>
+                <% if(currentUser && recipe.author.id.equals(currentUser._id)) { %>
+                <a class="btn btn-xs btn-warning" href="/recipes/<%=recipe._id %>/edit">Edit</a>
+                <form id="deleteBtn" action="/recipes/<%= recipe._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-xs btn-danger">Delete</button>
+                </form>
+                <% }; %>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="hidden-xs hidden-sm">
+            <h2><%= recipe.name %></h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                <% var array = recipe.ingredients; %>
+                <% array.forEach(function(ingredient) { %>
+                    <li><%= ingredient %></li>
+                <% }); %>
+            </ul>
+            <h3>Directions:</h3>
+            <p><%- recipe.directions %></p>
+            
+            <div class="well">
+                <div class="">
+                    <p><a href="/recipes/<%= recipe._id %>/comments/new" class="btn btn-xs btn-success">Add new comment</a></p>
+                </div>
+                
+                <% recipe.comments.forEach(function(comment) { %>
+                <div class="commentBlock clearfix">
+                    <div class="pull-left">
+                    <p>
+                        <%= comment.text %>
+                    </p>
+                    <p class="commentText"><em>Submitted by: <strong><%= comment.author.username %></strong></em></p>
+                    </div>
+                    <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                        <div class="pull-right">
+                        <a class="btn btn-xs btn-warning" href="/recipes/<%= recipe._id%>/comments/<%= comment._id %>/edit">Edit</a>
+                        <form class="fixDisplay" action="/recipes/<%= recipe._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger">Delete</button>
+                        </form>
+                        </div>
+                    <% }; %>
+                    <br>
+                </div>
+                <% }); %>
+            </div>
+            </div>
+            
+            <br><br>
+            
+            <div class="hidden-md hidden-lg">
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#ingredients" aria-controls="ingredients" role="tab" data-toggle="tab">Ingredients</a></li>
+                <li role="presentation"><a href="#directions" aria-controls="directions" role="tab" data-toggle="tab">Directions</a></li>
+                <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+              </ul>
+            
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="ingredients" style="margin-top:20px;">
+                    <ul>
+                        <% var array = recipe.ingredients %>
+                        <% array.forEach(function(ingredient) { %>
+                            <li><%= ingredient %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="directions" style="margin-top:20px;">
+                    <p><%- recipe.directions %></p>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="comments" style="margin-top:20px;">
+            
+                    <% recipe.comments.forEach(function(comment) { %>
+                        <div class="commentBlock clearfix">
+                            <div class="pull-left">
+                            <p>
+                                <%= comment.text %>
+                            </p>
+                            <p class="commentText"><em>Submitted by: <strong><%= comment.author.username %></strong></em></p>
+                            </div>
+                            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                <div class="pull-right">
+                                <a class="btn btn-xs btn-warning" href="/recipes/<%= recipe._id%>/comments/<%= comment._id %>/edit">Edit</a>
+                                <form class="fixDisplay" action="/recipes/<%= recipe._id%>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                    <button class="btn btn-xs btn-danger">Delete</button>
+                                </form>
+                                </div>
+                            <% }; %>
+                            <br>
+                        </div>
+                    <% }); %>
+                    
+                    <p><a href="/recipes/<%= recipe._id %>/comments/new" class="btn btn-xs btn-success">Add new comment</a></p>
+
+                </div>
+              </div>
+            
+            </div>
+                
+        </div>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>
