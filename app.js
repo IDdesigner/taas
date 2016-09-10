@@ -20,6 +20,7 @@ mongoose.Promise = global.Promise;
 var dataBase = process.env.DATABASEURL || "mongodb://localhost/taas_v12";
 mongoose.connect(dataBase);
 
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.set('view engine', 'ejs');
